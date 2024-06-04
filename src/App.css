@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #020631;
+}
+
+.app {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+.mainHeading h1,
+.subHeading h2 {
+  text-align: center;
+  color: white;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.8em;
+  width: 20em;
+  height: 2em;
+  background-color: white;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.input input {
+  width: 100%;
+  height: 1.6em;
+  border: none;
+  outline: none;
+}
+
+.input i {
+  cursor: pointer;
+  font-size: larger;
+  font-weight: 900;
+  color: grey;
+  margin-right: 5px;
+}
+
+.todos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.todo {
+  margin-top: 0.8em;
+  width: 20em;
+  height: 2em;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.todo .left {
+  display: flex;
+  align-items: center;
+}
+
+.todo .left p {
+  margin-left: 3px;
+  font-size: medium;
+  font-weight: 700;
+  color: grey;
+}
+
+.todo .left p.completed {
+  text-decoration: line-through;
+  color: lightgrey;
+}
+
+.todo .right i {
+  cursor: pointer;
+}
+  
