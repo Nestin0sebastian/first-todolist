@@ -1,89 +1,181 @@
-* {
+/* General Styles */
+body {
+  background: linear-gradient(to right, #f7e4ca 0%, #fd8c67 100%);
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-body {
-  background-color: #020631;
-}
-
 .app {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -10%);
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-.mainHeading h1,
-.subHeading h2 {
+/* Heading Styles */
+.main-heading h1 {
+  color: #ff6347;
   text-align: center;
-  color: white;
+  margin: 0;
+}
+
+/* Input Styles */
+.input-container {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .input {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  margin-top: 0.8em;
-  width: 20em;
-  height: 2em;
-  background-color: white;
-  border-radius: 6px;
-  padding: 5px;
 }
 
 .input input {
-  width: 100%;
-  height: 1.6em;
-  border: none;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
   outline: none;
 }
 
-.input i {
+.add-btn {
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
-  font-size: larger;
-  font-weight: 900;
-  color: grey;
-  margin-right: 5px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.todos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.add-btn:hover {
+  background-color: #e5533c;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.todo {
-  margin-top: 0.8em;
-  width: 20em;
-  height: 2em;
-  background-color: white;
+/* Todo Container Styles */
+.todo-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  border-radius: 6px;
-  padding: 5px;
 }
 
-.todo .left {
+.todos,
+.completed-todos {
+  flex-basis: 48%;
+}
+
+h3 {
+  color: #333;
+  border-bottom: 2px solid #ff6347;
+  padding-bottom: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Todo Styles */
+.todo {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.todo:last-child {
+  margin-bottom: 0;
+}
+
+.todo.deleting {
+  animation: crack 1s forwards;
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease-in-out; /* Added transition effect */
+}
+
+@keyframes crack {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+    background: linear-gradient(to right, #ff6347, #ff0000, #ff6347);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+    background: linear-gradient(to right, #ff6347, #ff0000, #ff6347);
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Right Container Styles */
+.right {
   display: flex;
   align-items: center;
 }
 
-.todo .left p {
-  margin-left: 3px;
-  font-size: medium;
-  font-weight: 700;
-  color: grey;
-}
-
-.todo .left p.completed {
-  text-decoration: line-through;
-  color: lightgrey;
-}
-
-.todo .right i {
+.right i {
+  margin-left: 10px;
   cursor: pointer;
+  color: #ff6347;
+  font-size: 1.5em; /* Increased font size */
+  transition: color 0.3s, transform 0.3s;
 }
+
+.right i:hover {
+  transform: scale(1.2) translateY(-1px);
+}
+
+.tick-button {
+  color: #4caf50;
   
+}
+
+.tick-button:hover {
+  color: #388e3c;
+}
+
+.trash-button {
+  color: #ff6347;
+}
+
+.trash-button:hover {
+  color: #e5533c;
+}
+
+.date {
+  font-size: 12px;
+  color: #999;
+  text-decoration: none; /* Remove underline decoration */
+}
+
+.todos .date {
+  text-decoration: none; /* Add this line */
+}
+.right i {
+  margin-left: 10px;
+  cursor: pointer;
+  color: #ff6347;
+  font-size: 2em; /* Increased font size to 2em */
+  transition: color 0.3s, transform 0.3s;
+}
+
+.tick-button {
+  font-size: 2em;
+  margin-right: 165px; /* Added margin-right for spacing between icons */
+}
+
+.trash-button {
+  margin-left: 10px; /* Added margin-left for spacing between icons */
+  margin-right: 20px; /* Adjusted margin-right for spacing */
+  font-size: 2em; /* Increased font size to 2em */
+}
